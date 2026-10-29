@@ -14,6 +14,9 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 
+# Clones abortados de forks externos (ex.: MyIDE = fork do VS Code)
+MyIDE/
+
 # Ambiente
 .env
 .env.*

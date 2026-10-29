@@ -131,3 +131,36 @@ no `estado.json`) — **corrigidas pelo GESTOR** (`.log` com `max-height:300px;o
 
 Próximo passo (T-013 — responsável: Operador): `opencode auth login anthropic` e reiniciar o app para
 recarregar a interface/rotas novas.
+
+## OP-006 (manutenção) — AGENTS.md atualizado
+
+Ordem recebida: atualizar a documentação de repositório, que ainda afirmava não haver código,
+manifests nem testes no workspace. **GESTOR** reescreveu `AGENTS.md` com a estrutura real
+(`app/`, `jogo/`, `.opencode/`), os comandos válidos (npm start, Imperio.bat, `node --check`,
+smoke tests em `app/*.mjs`), a ausência de lint/build/testes configurados, e as restrições
+(Windows-only, `rm` negado, guarda do terminal é lista negra, estado é snapshot versionado).
+Preferências (pt-BR, sem `rm`) preservadas.
+
+## OP-007 — Reconhecimento do fork MyIDE + plano de customização do VS Code
+
+Ordem recebida: investigar `https://github.com/bernardosdbc/MyIDE.git` e, em seguida, montar um
+plano para customizar o VS Code de verdade.
+
+**Reconhecimento (GESTOR, direto):** o repositório é um **fork público de `microsoft/vscode`**
+("My custom version of VSCode"), branch único `main`, **169.055 commits** (histórico integral do
+upstream), **1,62 GB**, criado em 25/10/2026 e sem nenhum commit próprio. Metadados lidos na
+fonte: `code-oss-dev` **1.144.0**, Node **24.22.1** (`.nvmrc`), `product.json` **padrão**
+(`Code - OSS` / `code-oss` / `.vscode-oss`) — ou seja, fork virgem, zero customização.
+
+**Diagnóstico local:** a pasta `MyIDE/` no workspace é um **clone abortado** (criado 29/10
+09:01): `.git/HEAD` → `refs/heads/.invalid`, **0 bytes** de objetos, nenhum commit. Passou a ser
+ignorada pelo `.gitignore`.
+
+**Plano entregue** em `docs/PLANO-myide.md`: 5 fases (ambiente Node 24.22.1 + Python + VS Build
+Tools C++; clone raso + `npm install`/`npm run compile`/`scripts/code.bat`; branding via
+`product.json`/ícones/welcome/`configurationDefaults`; mods de workbench; empacotamento
+`gulp vscode-win32-x64`), com 4 níveis de ambição (A sem fork, B distribuição, C mods de UI,
+D embutir `monaco-editor` no Núcleo de Comando), estimativas de tempo/disco e riscos
+(rebase mensal com upstream, Marketplace exige Open VSX, build frágil).
+
+Aguardando decisão do operador sobre o nível (A/B/C/D).

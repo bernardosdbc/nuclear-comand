@@ -31,6 +31,10 @@
     { "id": "T-010", "titulo": "Recon: padrões de UI (IDE + idle game)", "status": "concluída", "responsavel": "servo-busca" },
     { "id": "T-011", "titulo": "Reconstruir interface como IDE idle (chat no centro)", "status": "concluída", "responsavel": "servo-construcao" },
     { "id": "T-012", "titulo": "Inspecionar a interface IDE idle", "status": "concluída", "responsavel": "servo-revisao" },
-    { "id": "T-013", "titulo": "Ativar Claude (Anthropic) como modelo do comandante", "status": "pendente", "responsavel": "Operador" }
+    { "id": "T-013", "titulo": "Ativar Claude (Anthropic) como modelo do comandante", "status": "pendente", "responsavel": "Operador" },
+    { "id": "T-014", "titulo": "Atualizar AGENTS.md com a estrutura real do repositório", "status": "concluída", "responsavel": "GESTOR" },
+    { "id": "T-015", "titulo": "Recon: fork MyIDE (bernardosdbc) e clone abortado local", "status": "concluída", "responsavel": "GESTOR" },
+    { "id": "T-016", "titulo": "Plano de customização do VS Code (docs/PLANO-myide.md)", "status": "concluída", "responsavel": "GESTOR" },
+    { "id": "T-017", "titulo": "Escolher nível de customização (A/B/C/D)", "status": "pendente", "responsavel": "Operador" }
   ]
 }
