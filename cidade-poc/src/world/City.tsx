@@ -10,7 +10,7 @@ export function City() {
   return (
     <>
       <Sky />
-      <Fog attach="fog" args={['#060b14', 0.0015]} />
+      <Fog attach="fog" args={['#060b14', 0.0005]} />
       <Ground />
       {Object.entries(districts).map(([id, d]) => (
         <District key={id} id={id} config={d} />
